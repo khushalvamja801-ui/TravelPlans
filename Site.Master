@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="TravelPlans.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Travel Plans – Handcrafted itineraries, expert local guides, and seamless booking for extraordinary journeys worldwide." />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server">Travel Plans – Explore the World</asp:ContentPlaceHolder>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/css/site.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/css/components.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/css/responsive.css") %>" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="masterForm" runat="server">
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+            <div class="nav-inner">
+                <!-- Logo -->
+                <a href="<%= ResolveUrl("~/") %>" class="nav-logo" aria-label="Travel Plans Home">
+                    <div class="nav-logo-icon" aria-hidden="true">✈</div>
+                    <span class="nav-logo-text">Travel<span>Plans</span></span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <ul class="nav-links" role="list">
+                    <li><a href="<%= ResolveUrl("~/") %>" class="nav-link">Home</a></li>
+                    <li><a href="<%= ResolveUrl("~/Pages/Tours/TourPackages.aspx") %>" class="nav-link">Tour Packages</a></li>
+                    <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="nav-link">Destinations</a></li>
+                    <li><a href="<%= ResolveUrl("~/Pages/User/Dashboard.aspx") %>" class="nav-link">Dashboard</a></li>
+                </ul>
+
+                <!-- Desktop Actions -->
+                <div class="nav-actions">
+                    <a href="<%= ResolveUrl("~/Pages/Authentication/SignIn.aspx") %>" class="btn btn-secondary btn-sm">Sign In</a>
+                    <a href="<%= ResolveUrl("~/Pages/Authentication/Register.aspx") %>" class="btn btn-primary btn-sm">Get Started</a>
+                </div>
+
+                <!-- Hamburger (mobile) -->
+                <button id="navHamburger" class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMobile" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="navMobile" class="nav-mobile" role="dialog" aria-label="Mobile Navigation">
+            <div class="nav-mobile-inner">
+                <a href="<%= ResolveUrl("~/") %>" class="nav-mobile-link">🏠 Home</a>
+                <a href="<%= ResolveUrl("~/Pages/Tours/TourPackages.aspx") %>" class="nav-mobile-link">🗺 Tour Packages</a>
+                <a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="nav-mobile-link">🌍 Destinations</a>
+                <a href="<%= ResolveUrl("~/Pages/User/Dashboard.aspx") %>" class="nav-mobile-link">📊 Dashboard</a>
+                <hr style="border:none;border-top:1px solid var(--color-border);margin:0.75rem 0;" />
+                <a href="<%= ResolveUrl("~/Pages/Authentication/SignIn.aspx") %>" class="nav-mobile-link">🔑 Sign In</a>
+                <a href="<%= ResolveUrl("~/Pages/Authentication/Register.aspx") %>" class="nav-mobile-link">✨ Register Free</a>
+            </div>
+        </div>
+
+        <!-- ===== PAGE CONTENT ===== -->
+        <main id="mainContent" class="page-body" role="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon" aria-hidden="true">✈</div>
+                            <span class="footer-logo-text">TravelPlans</span>
+                        </div>
+                        <p class="footer-desc">Handcrafted itineraries, expert local guides, and seamless booking for extraordinary journeys worldwide. Your adventure starts here.</p>
+                        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+                            <a href="#" class="footer-link" aria-label="Facebook" style="font-size:1.2rem;">📘</a>
+                            <a href="#" class="footer-link" aria-label="Instagram" style="font-size:1.2rem;">📷</a>
+                            <a href="#" class="footer-link" aria-label="Twitter" style="font-size:1.2rem;">🐦</a>
+                            <a href="#" class="footer-link" aria-label="YouTube" style="font-size:1.2rem;">▶️</a>
+                        </div>
+                    </div>
+                    <!-- Quick Links -->
+                    <div>
+                        <div class="footer-col-title">Quick Links</div>
+                        <ul class="footer-links" role="list">
+                            <li><a href="<%= ResolveUrl("~/") %>" class="footer-link">Home</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Tours/TourPackages.aspx") %>" class="footer-link">Tour Packages</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">Destinations</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/User/Dashboard.aspx") %>" class="footer-link">My Dashboard</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Authentication/SignIn.aspx") %>" class="footer-link">Sign In</a></li>
+                        </ul>
+                    </div>
+                    <!-- Destinations -->
+                    <div>
+                        <div class="footer-col-title">Top Destinations</div>
+                        <ul class="footer-links" role="list">
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">🏝 Maldives</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">🗼 Paris</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">🌊 Santorini</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">🌺 Bali</a></li>
+                            <li><a href="<%= ResolveUrl("~/Pages/Destinations/Destinations.aspx") %>" class="footer-link">🗾 Tokyo</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div>
+                        <div class="footer-col-title">Contact Us</div>
+                        <ul class="footer-links" role="list">
+                            <li class="footer-link" style="display:flex;gap:0.5rem;align-items:flex-start;">📍 <span>123 Travel Street, Mumbai, India 400001</span></li>
+                            <li class="footer-link" style="display:flex;gap:0.5rem;align-items:center;">📞 <a href="tel:+911234567890" style="color:inherit;">+91 12345 67890</a></li>
+                            <li class="footer-link" style="display:flex;gap:0.5rem;align-items:center;">✉️ <a href="mailto:hello@travelplans.in" style="color:inherit;">hello@travelplans.in</a></li>
+                            <li class="footer-link" style="display:flex;gap:0.5rem;align-items:center;">🕐 <span>Mon–Sat, 9 AM – 6 PM IST</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Bottom bar -->
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TravelPlans. All rights reserved. <span style="color:rgba(255,255,255,0.25);margin:0 0.5rem;">|</span> <em>Demo application – no real bookings are processed.</em></p>
+                    <div style="display:flex;gap:1rem;">
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="<%= ResolveUrl("~/Content/js/site.js") %>"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server" />
+</body>
+</html>

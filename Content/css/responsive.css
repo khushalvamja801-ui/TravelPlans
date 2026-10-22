@@ -1,0 +1,426 @@
+/* =============================================
+   TRAVEL PLANS - RESPONSIVE CSS
+   Mobile-first breakpoints
+   ============================================= */
+
+/* -------------------------
+   Tablet: 576px - 991px
+   Desktop: 992px+
+   ------------------------- */
+
+/* --- Navigation Responsive --- */
+@media (max-width: 991px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image-grid {
+        display: none;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-desc {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tours-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-sidebar {
+        position: static;
+    }
+
+    .section {
+        padding: var(--space-16) 0;
+    }
+}
+
+/* --- Mobile: up to 575px --- */
+@media (max-width: 575px) {
+    :root {
+        --container-pad: 1rem;
+    }
+
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section {
+        padding: var(--space-12) 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wizard-steps {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: var(--space-2);
+    }
+
+    .wizard-connector {
+        width: 40px;
+    }
+
+    .card {
+        padding: var(--space-4);
+    }
+
+    .booking-widget {
+        position: static;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        flex-shrink: 0;
+    }
+
+    .data-table {
+        font-size: var(--font-size-xs);
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: var(--space-3);
+    }
+
+    .confirm-card {
+        padding: var(--space-8) var(--space-5);
+    }
+
+    .modal {
+        padding: var(--space-5);
+    }
+}
+
+/* --- Tour detail layout --- */
+@media (min-width: 992px) {
+    .tour-detail-layout {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: var(--space-8);
+        align-items: start;
+    }
+
+    .packages-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-6);
+        align-items: start;
+    }
+}
+
+@media (max-width: 991px) {
+    .tour-detail-layout {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .packages-layout {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+}
+
+/* --- Admin stats grid --- */
+@media (min-width: 768px) {
+    .admin-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-5);
+    }
+
+    .user-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-5);
+    }
+
+    .admin-booking-summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+    }
+}
+
+@media (max-width: 767px) {
+    .admin-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .user-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .admin-booking-summary {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+    }
+
+    .stat-value {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* --- Booking wizard responsive --- */
+@media (min-width: 992px) {
+    .booking-layout {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: var(--space-8);
+        align-items: start;
+    }
+}
+
+@media (max-width: 991px) {
+    .booking-layout {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+}
+
+/* --- Sign In page --- */
+@media (min-width: 768px) {
+    .auth-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 767px) {
+    .auth-panel-left {
+        display: none;
+    }
+}
+
+/* --- Destinations page (8 cards) --- */
+@media (min-width: 1200px) {
+    .dest-page-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .dest-page-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+}
+
+@media (max-width: 767px) {
+    .dest-page-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}
+
+/* --- Saved tours grid --- */
+@media (min-width: 992px) {
+    .saved-tours-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5);
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .saved-tours-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+}
+
+@media (max-width: 575px) {
+    .saved-tours-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}
+
+/* --- Admin table responsive card view on mobile --- */
+@media (max-width: 575px) {
+    .mobile-card-table .data-table thead {
+        display: none;
+    }
+
+    .mobile-card-table .data-table, 
+    .mobile-card-table .data-table tbody,
+    .mobile-card-table .data-table tr,
+    .mobile-card-table .data-table td {
+        display: block;
+    }
+
+    .mobile-card-table .data-table tr {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        margin-bottom: var(--space-4);
+        padding: var(--space-4);
+    }
+
+    .mobile-card-table .data-table td {
+        border: none;
+        padding: var(--space-2) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-card-table .data-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-size: var(--font-size-xs);
+        color: var(--color-text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-right: var(--space-4);
+        flex-shrink: 0;
+    }
+}
+
+/* --- Search & filter row responsive --- */
+@media (max-width: 575px) {
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .filter-chip-group {
+        gap: var(--space-1);
+    }
+}
+
+/* --- Dashboard layout mobile --- */
+@media (max-width: 767px) {
+    .dash-sidebar {
+        position: static;
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Nav actions mobile --- */
+@media (max-width: 400px) {
+    .nav-actions .btn-sm {
+        display: none;
+    }
+}
+
+/* --- Booking summary card header --- */
+@media (max-width: 575px) {
+    .booking-summary-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+}
+
+/* --- Horizontal overflow prevention --- */
+html, body {
+    overflow-x: hidden;
+}
+
+/* --- Form grid --- */
+@media (min-width: 576px) {
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-5);
+    }
+}
+
+/* --- Sticky nav scrolled state --- */
+.site-nav.scrolled {
+    box-shadow: var(--shadow-md);
+    background: rgba(255,255,255,0.99);
+}
